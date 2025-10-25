@@ -1,0 +1,24 @@
+# .gitignore
+
+# Entornos virtuales
+pii-detection-project/
+venv/
+env/
+*.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
