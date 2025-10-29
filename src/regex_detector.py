@@ -6,10 +6,9 @@ class RegexPIIDetector:
     def __init__(self):
         self.patterns = {
             'email': r'\b[A-Za-z0-9._%-+]+@[A-Za-z0-9._%-+]+\.[A-Za-z]{2,}\b',
-            'phone': r'(?:\+\d{1,3}[\s-]?)?(?:\(\d{1,4}\)[\s-]?)?\d{4}[\s-]?\d{4}\b',
+            'phone': r'(?<![-\d])(?:\+\d{1,3}[\s-]?)?(?:\(\d{1,4}\)|9[\s-]?)?\d{4}[\s-]?\d{4}(?![-\d])',
             'credit_card': r'(?<!\d)\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}(?!\d)',
-            'rut': r'\b\d{1,2}\.?\d{3}\.?\d{3}-[kK0-9]\b',
-            'address': r'(?:dirección|calle|avenida)[:\s]+([A-Za-z0-9\s,.#-]+)'
+            'rut': r'\b\d{1,2}\.?\d{3}\.?\d{3}-[kK0-9]\b'
         }
 
     def detect(self, text: str):
